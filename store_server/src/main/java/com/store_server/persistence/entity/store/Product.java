@@ -1,5 +1,6 @@
 package com.store_server.persistence.entity.store;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.store_server.persistence.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,12 +28,13 @@ public class Product extends BaseEntity {
     private Integer amount;
     private Boolean visible;
 
-
+    @JsonIgnore
     @ManyToMany(mappedBy = "products", cascade = {
             CascadeType.PERSIST
     })
     private Set<Shop> shops;
 
+    @JsonIgnore
     @ManyToMany(cascade = {
             CascadeType.MERGE,
             CascadeType.REMOVE

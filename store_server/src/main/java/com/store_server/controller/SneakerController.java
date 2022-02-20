@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {
-        "http://localhost:4200"}, maxAge = 3600, exposedHeaders="Access-Control-Allow-Origin")
+//@CrossOrigin(origins = "*")
 @RequestMapping("/products/sneakers")
 public class SneakerController {
     private final SneakerRepository sneakerRepository;
@@ -17,8 +16,10 @@ public class SneakerController {
         this.sneakerRepository = sneakerRepository;
     }
 
-    @GetMapping(path="/")
-    public List<Sneaker> getUsers() {
+    @GetMapping()
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<Sneaker> getSneakers() {
+        System.out.println("SneakerController.getSneakers");
         return sneakerRepository.findAll();
     }
 }
