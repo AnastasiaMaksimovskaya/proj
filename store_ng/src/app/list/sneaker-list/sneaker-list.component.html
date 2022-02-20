@@ -1,0 +1,24 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Количество</th>
+        <th scope="col">Цена</th>
+        <th scope="col">Предназначение</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let sneaker of sneakers">
+        <td>{{ sneaker.id }}</td>
+        <td>{{ sneaker.name }}</td>
+        <td>{{ sneaker.amount }}</td>
+        <td>{{ sneaker.price }}</td>
+        <td>{{ sneaker.sneakerPurpose }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
