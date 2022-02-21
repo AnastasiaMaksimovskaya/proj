@@ -1,5 +1,6 @@
 package com.store_server.persistence.entity.store.brands;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.store_server.persistence.entity.store.Brand;
 import com.store_server.persistence.entity.store.products.Sneaker;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import java.util.Set;
 @Table(name = "sneaker_brand")
 public class SneakerBrand extends Brand {
 
+    @JsonIgnore
     @OneToMany(
             mappedBy = "sneakerBrand")
     private Set<Sneaker> sneakers;

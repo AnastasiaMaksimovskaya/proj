@@ -16,7 +16,6 @@ import javax.persistence.*;
 public class Sneaker extends Product {
     private Integer size;
 
-    @JsonIgnore
     @ManyToOne
     private SneakerBrand sneakerBrand;
 

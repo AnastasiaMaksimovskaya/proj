@@ -8,6 +8,9 @@
         <th scope="col">Количество</th>
         <th scope="col">Цена</th>
         <th scope="col">Предназначение</th>
+        <th scope="col">Детали</th>
+        <th scope="col">Удалить</th>
+        <th scope="col">Обновить</th>
       </tr>
       </thead>
       <tbody>
@@ -16,9 +19,13 @@
         <td>{{ sneaker.name }}</td>
         <td>{{ sneaker.amount }}</td>
         <td>{{ sneaker.price }}</td>
-        <td>{{ sneaker.sneakerPurpose }}</td>
+        <td>{{ sneaker.sneakerPurpose}}</td>
+        <td><a href="/products/sneakers/{{sneaker.id}}" class="btn btn-info">Детали</a></td>
+        <td><a href="/products/sneakers/delete/{{sneaker.id}}" class="btn btn-danger">Удалить</a></td>
+        <td><a href="/products/sneakers/update/{{sneaker.id}}" class="btn btn-info">Обновить</a></td>
       </tr>
       </tbody>
     </table>
+    <a [routerLink]="['/products/sneakers/create,sneaker.id']" class="btn btn-info">Создать новый</a>
   </div>
 </div>

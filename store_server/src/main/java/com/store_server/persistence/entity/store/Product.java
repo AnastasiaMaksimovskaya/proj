@@ -28,7 +28,6 @@ public class Product extends BaseEntity {
     private Integer amount;
     private Boolean visible;
 
-    @JsonIgnore
     @ManyToMany(mappedBy = "products", cascade = {
             CascadeType.PERSIST
     })
